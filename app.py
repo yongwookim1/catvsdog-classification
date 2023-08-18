@@ -52,6 +52,8 @@ def main():
     st.title("Cat and Dog Classification Model")
 
     model = torch.load("/opt/ml/checkpoints/catvsdog.pt")
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    model.to(device)
     model.eval()
 
     uploaded_file = st.file_uploader(
