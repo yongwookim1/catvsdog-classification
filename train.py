@@ -73,7 +73,7 @@ def train(train_loader, valid_loader, args):
         if epoch_acc >= best_acc:
             best_acc = epoch_acc
             best_epoch = epoch + 1
-            torch.save(model, "/opt/ml/checkpoints/catvsdog.pt")
+            torch.save(model, "checkpoints/catvsdog.pt")
 
         print(f"valid Loss : {epoch_loss:.4f} Acc: {epoch_acc:.4f}")
         print(f"best Acc : {best_acc:.4f}")
