@@ -53,6 +53,12 @@ python test.py
 python train.py [-h] [--seed SEED] [--epochs EPOCHS] [--lr LR]
 ```
 
+## Streamlit
+
+```
+streamlit run app.py --server.fileWatcherType none --server.port [YOUR_PORT]
+```
+
 ## License
 
 ```python
