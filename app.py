@@ -51,7 +51,7 @@ def get_prediction(model, image_bytes):
 def main():
     st.title("Cat and Dog Classification Model")
 
-    model = torch.load("/opt/ml/checkpoints/catvsdog.pt")
+    model = torch.load("checkpoints/catvsdog.pt")
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model.to(device)
     model.eval()

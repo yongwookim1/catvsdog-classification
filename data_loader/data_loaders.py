@@ -44,23 +44,23 @@ class CatandDogInferenceDataset(Dataset):
 
 
 def data_loader(type):
-    cat_train_dir = "/opt/ml/data/training_set/training_set/cats"
-    dog_train_dir = "/opt/ml/data/training_set/training_set/dogs"
-    cat_valid_dir = "/opt/ml/data/valid_set/valid_set/cats"
-    dog_valid_dir = "/opt/ml/data/valid_set/valid_set/dogs"
-    test_dir = "/opt/ml/data/test_img"
+    cat_train_dir = "data/training_set/training_set/cats"
+    dog_train_dir = "data/training_set/training_set/dogs"
+    cat_valid_dir = "data/valid_set/valid_set/cats"
+    dog_valid_dir = "data/valid_set/valid_set/dogs"
+    test_dir = "data/test_img"
 
     cat_train_filenames = sorted(
-        [os.path.join(cat_train_dir, f) for f in os.listdir(cat_train_dir)]
+        [os.path.join(cat_train_dir, f) for f in os.listdir(cat_train_dir) if not f.endswith('.DS_Store')]
     )
     dog_train_filenames = sorted(
-        [os.path.join(dog_train_dir, f) for f in os.listdir(dog_train_dir)]
+        [os.path.join(dog_train_dir, f) for f in os.listdir(dog_train_dir) if not f.endswith('.DS_Store')]
     )
     cat_valid_filenames = sorted(
-        [os.path.join(cat_valid_dir, f) for f in os.listdir(cat_valid_dir)]
+        [os.path.join(cat_valid_dir, f) for f in os.listdir(cat_valid_dir) if not f.endswith('.DS_Store')]
     )
     dog_valid_filenames = sorted(
-        [os.path.join(dog_valid_dir, f) for f in os.listdir(dog_valid_dir)]
+        [os.path.join(dog_valid_dir, f) for f in os.listdir(dog_valid_dir) if not f.endswith('.DS_Store')]
     )
     test_images_filenames = [os.path.join(test_dir, f) for f in os.listdir(test_dir)]
     train_images_filenames = [*cat_train_filenames, *dog_train_filenames]
