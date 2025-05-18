@@ -30,7 +30,7 @@ classify cat and dog.
 ## Clone and install requirements
 
 ```
-git clone https://github.com/yongwookim1/catvsdog_image_classification.git
+git clone https://github.com/yongwookim1/catvsdog-classification.git
 conda env create -f requirements/catvsdog.yaml
 ```
 
